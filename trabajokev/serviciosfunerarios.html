@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Funeraria</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+        .service-list {
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #343a40;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .service-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #343a40;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+        .service-item:hover {
+            background-color: #e9ecef; /* Color de fondo al pasar el ratón */
+        }
+        #error-message {
+            display: none; /* Ocultar por defecto */
+            color: red; /* Color del mensaje de error */
+            text-align: center;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Funeraria</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container service-list">
+        <h2>Servicios Ofrecidos</h2>
+        <div id="servicios-list" class="mb-4"></div>
+        <div id="error-message"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Funeraria. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+      
+        fetch('serviciosli.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error en la carga de datos: ' + response.status);
+                }
+                return response.json(); // Convertir la respuesta en JSON
+            })
+            .then(data => {
+                const serviciosList = document.getElementById('servicios-list');
+                const errorMessage = document.getElementById('error-message');
+                errorMessage.style.display = 'none'; // Ocultar mensaje de error
+
+                const ol = document.createElement('ol'); // Crear lista ordenada
+                data.forEach(servicio => {
+                    const li = document.createElement('li');
+                    li.className = 'service-item';
+                    li.textContent = servicio.descripcion; // Mostrar solo la descripción
+                    ol.appendChild(li); // Agregar el elemento a la lista
+                });
+                serviciosList.appendChild(ol); // Agregar la lista a la sección
+            })
+            .catch(error => {
+                console.error('Error al cargar los servicios:', error);
+                const errorMessage = document.getElementById('error-message');
+                errorMessage.textContent = 'No se pudieron cargar los servicios. Intente más tarde.';
+                errorMessage.style.display = 'block'; // Mostrar mensaje de error
+            });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
