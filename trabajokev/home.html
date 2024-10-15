@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Cementerio</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #606060; /* Fondo gris oscuro */
+            color: #f8f9fa; /* Color claro para el texto */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Asegura que el footer esté al final */
+        }
+        .navbar {
+            margin-bottom: 30px;
+            background-color: #343a40;
+        }
+        .navbar-brand, .nav-link {
+            color: #ffffff;
+        }
+        .nav-link:hover {
+            color: #ffc107;
+        }
+        h1, h2 {
+            color: #ffd700; /* Color dorado para los títulos */
+            text-align: center;
+            margin: 20px 0;
+        }
+        p, li {
+            color: #e0e0e0; /* Color gris claro para el texto */
+            text-align: justify;
+            margin: 0 15px;
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #f8f9fa;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+        }
+        .carousel-inner img {
+            width: 100%;
+            height: 500px; /* Altura del carrusel ajustada */
+        }
+        .content-section {
+            margin: 40px 0;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para resaltar */
+        }
+        .content-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .service-list {
+            text-align: center; /* Centra el texto en la lista de servicios */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Cementerio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="producto3.html">Compra</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacto1.html">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="registro.html">Registro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Iniciar Sesión</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Carrusel de imágenes -->
+    <div id="carouselExample" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="imagen1.jpg" class="d-block" alt="Imagen 1">
+            </div>
+            <div class="carousel-item">
+                <img src="imagen2.jpg" class="d-block" alt="Imagen 2">
+            </div>
+            <div class="carousel-item">
+                <img src="imagen3.jpg" class="d-block" alt="Imagen 3">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- Sección Principal -->
+    <div class="container flex-grow-1">
+        <h1>Bienvenido al Cementerio</h1>
+        <p>Honramos la memoria de nuestros seres queridos con respeto y dignidad. Aquí podrás encontrar información sobre nuestros servicios, realizar compras y contactar con nosotros.</p>
+        
+        <div class="content-section">
+            <h2>Historia del Cementerio</h2>
+            <p>Fundado en 1974, el Cementerio XYZ fue creado con la misión de proporcionar un lugar de descanso digno para nuestros seres queridos. Desde sus inicios, ha sido un espacio de paz y reflexión, donde las familias pueden rendir homenaje a quienes han partido. Con el tiempo, hemos crecido y evolucionado, ofreciendo servicios cada vez más completos y personalizados.</p>
+            <p>En los años 80, el cementerio se expandió para incluir una zona de cremación y un jardín memorial, donde los familiares pueden plantar flores y recordatorios en honor a sus seres queridos. Nuestro compromiso con la comunidad ha sido siempre el de brindar un ambiente tranquilo y acogedor, donde cada visitante pueda encontrar consuelo.</p>
+            <img src="historia.jpg" alt="Historia del Cementerio" class="img-fluid">
+        </div>
+
+        <div class="content-section">
+            <h2>Sobre Nosotros</h2>
+            <p>El Cementerio XYZ ha estado sirviendo a la comunidad durante más de 50 años, proporcionando un lugar de paz y recuerdo para aquellos que han partido. Nuestro compromiso es ofrecer un ambiente sereno y respetuoso.</p>
+            <img src="cementerio1.jpg" alt="Vista del Cementerio" class="img-fluid">
+        </div>
+
+        <div class="content-section">
+            <h2>Servicios Ofrecidos</h2>
+            <p>Ofrecemos una variedad de servicios que incluyen:</p>
+            <div class="service-list">
+                <ul class="list-unstyled">
+                    <li>Compra de lotes y sepulturas.</li>
+                    <li>Servicios de cremación.</li>
+                    <li>Mantenimiento y cuidado de tumbas.</li>
+                    <li>Asesoramiento en planificación funeraria.</li>
+                </ul>
+            </div>
+            <img src="servicios.jpg" alt="Servicios del Cementerio" class="img-fluid">
+        </div>
+
+        <div class="content-section">
+            <h2>Imágenes de Nuestro Cementerio</h2>
+            <img src="imagen4.jpg" alt="Imagen del Cementerio" class="img-fluid mb-3">
+            <p>Vea algunas de las áreas hermosas y tranquilas de nuestro cementerio, donde cada rincón está diseñado para honrar la memoria de quienes han pasado.</p>
+            <img src="imagen5.jpg" alt="Otro Ángulo del Cementerio" class="img-fluid">
+        </div>
+
+        <div class="content-section">
+            <h2>Nuestra Misión</h2>
+            <p>Nos esforzamos por proporcionar un entorno de respeto, paz y comodidad. Nuestro objetivo es ayudar a las familias en momentos difíciles y garantizar que sus seres queridos sean recordados con dignidad.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Cementerio. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
